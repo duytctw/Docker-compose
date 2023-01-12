@@ -10,7 +10,7 @@ services:
     ports:
       - 27017:27017
     volumes:
-      - /Users/duytc/Documents/Docker/Docker-data/Mongo:/data/db
+      - /Users/monkey/Documents/Docker-compose/docker-data/mongo:/data/db
   
   # Mongo Express Service
   mongo-express:
