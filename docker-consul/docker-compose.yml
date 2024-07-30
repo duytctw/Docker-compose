@@ -1,0 +1,20 @@
+version: '3.9'
+
+services:
+  consul:
+    image: docker.io/library/consul:1.15.4
+    container_name: consul
+    ports:
+      - '8500:8500'
+    command: agent -dev -client=0.0.0.0
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8500/v1/status/leader"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    networks:
+      - consul-network
+
+networks:
+  consul-network:
+    driver: bridge
