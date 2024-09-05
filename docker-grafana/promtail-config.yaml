@@ -15,4 +15,4 @@ scrape_configs:
           - localhost
         labels:
           job: app-logs
-          __path__: /var/log/*.log # đường dẫn tới file logs
+          __path__: /home/mb-miniapp/log/*.log # đường dẫn tới file logs
